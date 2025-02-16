@@ -15,9 +15,14 @@ public class IngredientTypeTest {
     }
 
     @Test
-    public void testEnumNames() {
+    public void testEnumNamesSauces() {
         // Проверка, что имена перечислений верные
         assertEquals("SAUCE", IngredientType.SAUCE.name());
+    }
+
+    @Test
+    public void testEnumNamesFilling() {
+        // Проверка, что имена перечислений верные
         assertEquals("FILLING", IngredientType.FILLING.name());
     }
 }
