@@ -1,11 +1,8 @@
 package praktikum;
 
-/**
- * Модель булочки для бургера.
- * Булочке можно дать название и назначить цену.
- */
-public class Bun {
+import praktikum.dependency.injection.IBun;
 
+public class Bun implements IBun {
     public String name;
     public float price;
 
@@ -14,12 +11,21 @@ public class Bun {
         this.price = price;
     }
 
+    @Override
     public String getName() {
-        return name;
+        if (!name.isEmpty()) {
+            return name;
+        } else {
+            throw new IllegalArgumentException ("Название не может быть пустым");
+        }
     }
 
+    @Override
     public float getPrice() {
-        return price;
+        if (price > 0) {
+            return price;
+        } else {
+            throw new IllegalArgumentException ("Цена булочки не может быть отрицательной");
+        }
     }
-
 }
